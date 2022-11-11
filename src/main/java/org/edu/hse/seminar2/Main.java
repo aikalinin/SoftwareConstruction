@@ -1,6 +1,8 @@
 package org.edu.hse.seminar2;
 
 import org.edu.hse.seminar2.oop.FoodProvider;
+import org.edu.hse.seminar2.oop.TestProvider;
+import org.edu.hse.seminar2.oop.Testable;
 import org.edu.hse.seminar2.oop.Worker;
 
 import java.time.LocalDate;
@@ -18,5 +20,14 @@ public class Main {
         System.out.println(worker.getAge());
 
         Worker.printWorkersCount();
+
+        worker.addScore(10);
+        worker.addScore(5);
+
+        Testable testable = new Worker("Alex",LocalDate.of(2004, 9, 11));
+        testable.addScore(9);
+
+        System.out.println(TestProvider.calculateAverageScore(Arrays.asList(worker, testable)));
+        System.out.println(worker);
     }
 }

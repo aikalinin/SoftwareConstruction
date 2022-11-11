@@ -5,12 +5,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// Наследование
 public class Worker extends Human implements Testable {
 
+    // Encapsulation
     private final List<Integer> scores = new ArrayList<>();
+
     private String position;
 
-    private static Integer count = 0;
+    private static Integer count;
+
+    // Про статикку
+    static {
+        count = 0;
+    }
 
     public Worker(String name, LocalDate birthDate) {
         // super(name, birthDate);
@@ -43,9 +51,14 @@ public class Worker extends Human implements Testable {
         System.out.println("Worker ate: " + message);
     }
 
+    // Polymorphism
     @Override
     public int getAge() {
         return LocalDate.now().getYear() - getBirthDate().getYear();
+    }
+
+    public int getAge(LocalDate from) {
+        return from.getYear() - getBirthDate().getYear();
     }
 
     @Override

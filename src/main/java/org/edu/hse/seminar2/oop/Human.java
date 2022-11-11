@@ -2,6 +2,7 @@ package org.edu.hse.seminar2.oop;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public abstract class Human {
 
@@ -9,7 +10,9 @@ public abstract class Human {
 
     private LocalDate birthDate;
 
-    private final static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+    private final static DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+            .ofPattern("dd LLLL yyyy")
+            .withLocale(Locale.ENGLISH);
 
     public abstract void speak(String text);
 
@@ -24,7 +27,7 @@ public abstract class Human {
         this.birthDate = birthDate;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
@@ -32,7 +35,7 @@ public abstract class Human {
         return birthDate;
     }
 
-    public void setName(String name) {
+    public final void setName(String name) {
         this.name = name;
     }
 
