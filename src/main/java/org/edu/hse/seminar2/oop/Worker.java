@@ -3,15 +3,28 @@ package org.edu.hse.seminar2.oop;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Worker extends Human implements Testable {
 
     private final List<Integer> scores = new ArrayList<>();
+    private String position;
+
+    private static Integer count = 0;
 
     public Worker(String name, LocalDate birthDate) {
+        // super(name, birthDate);
+        this(name, birthDate, "junior");
+    }
+
+    public Worker(String name, LocalDate birthDate, String position) {
         super(name, birthDate);
+        this.position = position;
+        count += 1;
+    }
+
+    public static void printWorkersCount() {
+        System.out.println(count);
     }
 
     @Override
@@ -43,5 +56,13 @@ public class Worker extends Human implements Testable {
     @Override
     public List<Integer> getScores() {
         return scores;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }

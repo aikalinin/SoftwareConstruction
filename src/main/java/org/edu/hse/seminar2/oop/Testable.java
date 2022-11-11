@@ -6,5 +6,5 @@ public interface Testable {
 
     void addScore(Integer score);
 
-     List<Integer> getScores();
+    List<Integer> getScores();
 }
