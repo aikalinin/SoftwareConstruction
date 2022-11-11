@@ -3,7 +3,7 @@ package org.edu.hse.seminar2.oop;
 import java.util.List;
 
 public class FoodProvider {
-    public static String MakeCoffee(List<String> additives) {
+    public static String makeCoffee(List<String> additives) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Coffee with ");
         additives.forEach(item -> stringBuilder.append(item).append(" and "));
@@ -12,7 +12,7 @@ public class FoodProvider {
         return stringBuilder.toString();
     }
 
-    public static String MakeBurger(List<String> additives) {
+    public static String makeBurger(List<String> additives) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("\nBurger:\n");
         additives.forEach(item -> stringBuilder.append(item).append("\n"));
