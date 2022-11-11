@@ -1,0 +1,47 @@
+package org.edu.hse.seminar2.oop;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Worker extends Human implements Testable {
+
+    private final List<Integer> scores = new ArrayList<>();
+
+    public Worker(String name, LocalDate birthDate) {
+        super(name, birthDate);
+    }
+
+    @Override
+    public void speak(String text) {
+        System.out.println("Worker is saying" + text);
+    }
+
+    @Override
+    public void walk(Double meters) {
+        System.out.printf("Worker has run %f mitres\n", meters);
+    }
+
+    @Override
+    public void eat(String[] food) {
+        String message = Arrays.stream(food).reduce((acc, next) -> acc + ", " + next).orElse("Nothing");
+        System.out.println("Worker ate: " + message);
+    }
+
+    @Override
+    public int getAge() {
+        return LocalDate.now().getYear() - getBirthDate().getYear();
+    }
+
+    @Override
+    public void addScore(Integer score) {
+        scores.add(score);
+    }
+
+    @Override
+    public List<Integer> getScores() {
+        return scores;
+    }
+}
