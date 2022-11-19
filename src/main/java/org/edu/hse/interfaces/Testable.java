@@ -1,4 +1,4 @@
-package org.edu.hse.oop;
+package org.edu.hse.interfaces;
 
 import java.util.List;
 

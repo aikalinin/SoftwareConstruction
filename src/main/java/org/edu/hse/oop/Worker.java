@@ -1,5 +1,7 @@
 package org.edu.hse.oop;
 
+import org.edu.hse.interfaces.Testable;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;

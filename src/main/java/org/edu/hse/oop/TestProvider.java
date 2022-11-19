@@ -1,5 +1,7 @@
 package org.edu.hse.oop;
 
+import org.edu.hse.interfaces.Testable;
+
 import java.util.List;
 
 public class TestProvider {
