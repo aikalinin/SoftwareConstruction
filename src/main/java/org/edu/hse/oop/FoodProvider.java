@@ -3,6 +3,7 @@ package org.edu.hse.oop;
 import java.util.List;
 
 public class FoodProvider {
+
     public static String makeCoffee(List<String> additives) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Coffee with ");

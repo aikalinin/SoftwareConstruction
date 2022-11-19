@@ -8,8 +8,13 @@ public interface Drawable {
         System.out.println("Hello from drawable draw");
     }
 
+    default void defaultMethod() {
+        System.out.println("Hi from the default method");
+    }
+
     default String printSelf() {
-        throw new RuntimeException("Implement logic");
+        System.out.println("Hi from printSelf (Drawable)");
+        return "Drawable Hi";
     }
 
     default void sayHello() {
