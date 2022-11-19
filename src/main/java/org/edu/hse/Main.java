@@ -1,9 +1,9 @@
-package org.edu.hse.seminar2;
+package org.edu.hse;
 
-import org.edu.hse.seminar2.oop.FoodProvider;
-import org.edu.hse.seminar2.oop.TestProvider;
-import org.edu.hse.seminar2.oop.Testable;
-import org.edu.hse.seminar2.oop.Worker;
+import org.edu.hse.oop.FoodProvider;
+import org.edu.hse.oop.TestProvider;
+import org.edu.hse.oop.Testable;
+import org.edu.hse.oop.Worker;
 
 import java.time.LocalDate;
 import java.util.Arrays;
