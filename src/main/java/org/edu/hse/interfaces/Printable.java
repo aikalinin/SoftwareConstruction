@@ -13,5 +13,7 @@ public interface Printable {
         return "Printable Hi";
     }
 
+    void notDefault();
+
     void sayHello();
 }

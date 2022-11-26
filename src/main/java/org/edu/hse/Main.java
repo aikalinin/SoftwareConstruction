@@ -2,10 +2,7 @@ package org.edu.hse;
 
 import org.edu.hse.interfaces.Implementer;
 import org.edu.hse.interfaces.Testable;
-import org.edu.hse.oop.FoodProvider;
-import org.edu.hse.oop.Human;
-import org.edu.hse.oop.TestProvider;
-import org.edu.hse.oop.Worker;
+import org.edu.hse.oop.*;
 
 import javax.swing.plaf.LabelUI;
 import java.time.LocalDate;
@@ -38,9 +35,11 @@ public class Main {
 
         /*
         * */
+        Student student = new Student();
         Implementer implementer = new Implementer();
         implementer.myMethod();
         implementer.defaultMethod();
+
         implementer.sayHello();
         implementer.draw();
         implementer.printSelf();

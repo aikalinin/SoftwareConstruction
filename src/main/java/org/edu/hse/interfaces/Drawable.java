@@ -20,4 +20,10 @@ public interface Drawable {
     default void sayHello() {
         System.out.println("Hello!");
     }
+
+    static void staticMethod() {
+        System.out.println("Hi");
+    }
+
+    void notDefault();
 }
