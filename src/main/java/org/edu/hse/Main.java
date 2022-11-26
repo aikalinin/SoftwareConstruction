@@ -13,35 +13,13 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        Worker worker = new Worker("Igor", LocalDate.of(2004, 9, 11));
+        Worker worker = new Worker("Igor", LocalDate.of(2010, 10, 11));
+        Worker worker1 = new Worker("Pasha", LocalDate.of(1996, 2, 20));
+        Worker worker2 = new Worker("Gosha", LocalDate.of(2028, 2, 28));
+        WorkerExploitation workerExploitation = new WorkerExploitation(List.of(worker, worker1, worker2));
+        workerExploitation.run();
 
-        final String coffee = FoodProvider.makeCoffee(Arrays.asList("milk", "sugar"));
-        final String burger = FoodProvider.makeBurger(Arrays.asList("bun", "cheese", "tomato", "steak", "pickles", "bun"));
+        WorkerExploitation workerExploitation2 = new WorkerExploitation(worker, worker1, worker2);
 
-        worker.eat(new String[]{coffee, "Noodles", burger});
-        System.out.println(worker.getAge());
-
-        Worker.printWorkersCount();
-
-        worker.addScore(10);
-        worker.addScore(5);
-
-        Testable testable = new Worker("Alex",LocalDate.of(2004, 9, 11));
-        testable.addScore(9);
-
-        System.out.println(TestProvider.calculateAverageScore(Arrays.asList(worker, testable)));
-        System.out.println(worker);
-
-
-        /*
-        * */
-        Student student = new Student();
-        Implementer implementer = new Implementer();
-        implementer.myMethod();
-        implementer.defaultMethod();
-
-        implementer.sayHello();
-        implementer.draw();
-        implementer.printSelf();
     }
 }

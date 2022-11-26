@@ -1,5 +1,7 @@
 package org.edu.hse.oop;
 
+import org.edu.hse.exceptions.CrampedLegException;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -16,7 +18,7 @@ public abstract class Human {
 
     public abstract void speak(String text);
 
-    public abstract void walk(Double meters);
+    public abstract void walk(Integer meters) throws CrampedLegException;
 
     public abstract void eat(String[] food);
 
