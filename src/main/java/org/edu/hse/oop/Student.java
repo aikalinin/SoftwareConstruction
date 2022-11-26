@@ -45,6 +45,7 @@ public class Student implements Serializable, Cloneable {
             return false;
         }
 
+//        if (otherObject.getClass() == this.getClass()) {
         if (otherObject instanceof Student other) {
 //            return name.equals(other.name)
 //                    && grades.equals(other.grades)

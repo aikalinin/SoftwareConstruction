@@ -28,7 +28,7 @@ public class Worker extends Human implements Testable {
 
     @Override
     public void walk(Integer meters) throws CrampedLegException {
-        if (random.nextInt(100) > 50) {
+        if (random.nextInt(100) > 30) {
             throw new CrampedLegException(meters);
         }
 
@@ -44,7 +44,7 @@ public class Worker extends Human implements Testable {
     @Override
     public int getAge() {
         int age = random.nextInt(400);
-        if (age > 90) {
+        if (age > 100) {
             throw new WastedException(age);
         }
 

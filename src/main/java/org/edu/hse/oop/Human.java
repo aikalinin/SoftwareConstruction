@@ -1,6 +1,7 @@
 package org.edu.hse.oop;
 
 import org.edu.hse.exceptions.CrampedLegException;
+import org.edu.hse.exceptions.WastedException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -22,7 +23,7 @@ public abstract class Human {
 
     public abstract void eat(String[] food);
 
-    public abstract int getAge();
+    public abstract int getAge() throws WastedException;
 
     public Human(String name, LocalDate birthDate) {
         this.name = name;
@@ -47,9 +48,13 @@ public abstract class Human {
 
     @Override
     public String toString() {
-        return String.format("My name is %s\nI was born in %s, I'm %d years old.",
-                name,
-                dateTimeFormatter.format(birthDate),
-                getAge());
+        try {
+            return String.format("My name is %s\nI was born in %s, I'm %d years old.",
+                    name,
+                    dateTimeFormatter.format(birthDate),
+                    getAge());
+        } catch (WastedException e) {
+            return e.getMessage();
+        }
     }
 }
