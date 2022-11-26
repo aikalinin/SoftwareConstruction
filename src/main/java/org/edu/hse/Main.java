@@ -1,13 +1,12 @@
 package org.edu.hse;
 
-import org.edu.hse.interfaces.Implementer;
-import org.edu.hse.interfaces.Testable;
-import org.edu.hse.oop.*;
+import org.edu.hse.oop.FileIterator;
+import org.edu.hse.oop.Worker;
+import org.edu.hse.oop.WorkerExploitation;
 
-import javax.swing.plaf.LabelUI;
+import java.io.FileNotFoundException;
+import java.net.URL;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -20,6 +19,12 @@ public class Main {
         workerExploitation.run();
 
         WorkerExploitation workerExploitation2 = new WorkerExploitation(worker, worker1, worker2);
+    }
 
+    private static void readFile() throws FileNotFoundException {
+        ClassLoader classLoader = Main.class.getClassLoader();
+        URL resource = classLoader.getResource("file.txt");
+        assert resource != null;
+        FileIterator iterator = new FileIterator(resource.getPath());
     }
 }
