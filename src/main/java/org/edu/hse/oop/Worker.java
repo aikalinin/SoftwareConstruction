@@ -28,6 +28,7 @@ public class Worker extends Human implements Testable {
 
     @Override
     public void walk(Integer meters) throws CrampedLegException {
+
         if (random.nextInt(100) > 30) {
             throw new CrampedLegException(meters);
         }

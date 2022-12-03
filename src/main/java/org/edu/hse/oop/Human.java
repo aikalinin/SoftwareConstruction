@@ -23,7 +23,7 @@ public abstract class Human {
 
     public abstract void eat(String[] food);
 
-    public abstract int getAge() throws WastedException;
+    public abstract int getAge();
 
     public Human(String name, LocalDate birthDate) {
         this.name = name;
