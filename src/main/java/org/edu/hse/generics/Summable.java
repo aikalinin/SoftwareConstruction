@@ -1,5 +1,5 @@
 package org.edu.hse.generics;
 
-public interface Summable<T> extends Summable<Summable<Number>> {
+public interface Summable<T> {
     T add(T other);
 }
