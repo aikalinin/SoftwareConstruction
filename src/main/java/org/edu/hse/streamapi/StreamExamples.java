@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class StreamExamples {
 
-    private OrderRepository orderRepository = new OrderRepository();
+    private final OrderRepository orderRepository = new OrderRepository();
 
 
     public BigDecimal getPriceClassic() {
@@ -32,7 +32,7 @@ public class StreamExamples {
             throw new IllegalArgumentException("Order ID cannot be null");
         }
 
-        List<Orders> lines = orderRepository.supplyOrders();
+        List<Orders> lines = orderRepository.findByOrderId(orderId);
         return lines.stream()
                 .map(Orders::getPrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
