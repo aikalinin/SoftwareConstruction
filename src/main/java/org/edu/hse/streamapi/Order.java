@@ -2,15 +2,15 @@ package org.edu.hse.streamapi;
 
 import java.math.BigDecimal;
 
-public class Orders {
+public class Order {
 
     private BigDecimal price;
 
-    public Orders(BigDecimal price) {
+    public Order(BigDecimal price) {
         this.price = price;
     }
 
-    public Orders(int i) {
+    public Order(int i) {
         this.price = new BigDecimal(i);
     }
 

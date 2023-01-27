@@ -6,19 +6,19 @@ import java.util.List;
 
 public class OrderRepository {
 
-    public List<Orders> findByOrderId(long orderId) {
+    public List<Order> findByOrderId(long orderId) {
         return new ArrayList<>() {{
-            add(new Orders(new BigDecimal(30)));
-            add(new Orders(10));
-            add(new Orders(50));
+            add(new Order(new BigDecimal(30)));
+            add(new Order(10));
+            add(new Order(50));
         }};
     }
 
-    public List<Orders> supplyOrders() {
+    public List<Order> supplyOrders() {
         return new ArrayList<>() {{
-            add(new Orders(new BigDecimal(30)));
-            add(new Orders(10));
-            add(new Orders(50));
+            add(new Order(new BigDecimal(30)));
+            add(new Order(10));
+            add(new Order(50));
         }};
     }
 }
