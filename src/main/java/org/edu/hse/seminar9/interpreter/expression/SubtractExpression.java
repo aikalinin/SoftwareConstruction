@@ -1,0 +1,15 @@
+package org.edu.hse.seminar9.interpreter.expression;
+
+import lombok.RequiredArgsConstructor;
+import org.edu.hse.seminar9.interpreter.Context;
+
+@RequiredArgsConstructor
+public class SubtractExpression implements Expression {
+
+    private final Expression leftExpression;
+    private final Expression rightExpression;
+
+    public int interpret(Context context) {
+        return leftExpression.interpret(context) - rightExpression.interpret(context);
+    }
+}
