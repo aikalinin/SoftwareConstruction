@@ -46,7 +46,9 @@ public class ObserverMain {
     private static void badLogic(final BadDateLabel badDateLabel1, final BadDateLabel badDateLabel2) {
         final Profile profile = profileProvider();
         badDateLabel1.setProfile(profile);
+        badDateLabel1.update();
         badDateLabel2.setProfile(profile);
+        badDateLabel2.update();
     }
 
     private static Profile profileProvider() {

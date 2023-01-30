@@ -5,7 +5,7 @@ import org.edu.hse.seminar9.memento.Memento;
 import org.edu.hse.seminar9.memento.model.Player;
 
 @ToString
-public class PlayerOriginator implements Originator<Player>{
+public class PlayerOriginator implements Originator<Player> {
 
     private Player state;
 

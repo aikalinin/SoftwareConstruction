@@ -20,6 +20,7 @@ public class CachableRouter implements Router<Imaginable> {
             return imaginable;
         }
 
+        // Запросы на сервер
         final Imaginable newImaginable;
         if (url.contains("profile")) {
             newImaginable = Profile.builder()

@@ -13,6 +13,6 @@ public class FlyweightMain {
         imaginableRouter.getData("news://data");
 
         imaginableRouter.getData("profile://data");
-        imaginableRouter.getData("profile://data2");
+        imaginableRouter.getData("news://data");
     }
 }

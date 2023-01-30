@@ -31,11 +31,10 @@ public class MementoMain {
                 .build());
         careTaker.add(originator.saveStateToMemento());
 
-
         originator.setState(Player.builder()
                 .currentGame("Tetris 2077")
                 .name("New Vasya")
-                .rating(120)
+                .rating(1000)
                 .build());
         System.out.println("Current state from originator: " + originator.getState());
 
