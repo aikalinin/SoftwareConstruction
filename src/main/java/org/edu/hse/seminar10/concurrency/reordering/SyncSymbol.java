@@ -1,4 +1,4 @@
-package org.edu.hse.seminar10.concurrency.sync;
+package org.edu.hse.seminar10.concurrency.reordering;
 
 import lombok.Getter;
 import lombok.Setter;
