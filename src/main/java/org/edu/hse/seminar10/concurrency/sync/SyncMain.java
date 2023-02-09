@@ -2,11 +2,12 @@ package org.edu.hse.seminar10.concurrency.sync;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.SneakyThrows;
 
 public class SyncMain {
     public static void main(String[] args) throws InterruptedException {
-        for(int i = 0; i < 100; ++i) {
-            final Resource serverResource = new SyncServerResource();
+        for (int i = 0; i < 100; ++i) {
+            final Resource serverResource = new ServerResource();
             serverResource.setI(10);
 
             final MyThread myThread1 = new MyThread();
@@ -43,6 +44,7 @@ interface Resource {
     void setI(int i);
 
     int getI();
+
     void update();
 }
 
@@ -66,6 +68,7 @@ class ServerResource implements Resource {
 class SyncServerResource implements Resource {
     private int i;
 
+    @SneakyThrows
     public void update() {
         synchronized (this) {
             int i = this.i;

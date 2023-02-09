@@ -6,39 +6,24 @@ public class WaitMain {
 
     public static void main(String[] args) throws InterruptedException {
         ThreadA threadA = new ThreadA();
+
         Player player = Player.builder()
                 .name("a")
                 .currentGame("b")
                 .rating(1)
                 .build();
-        threadA.player = player;
+
+        threadA.setPlayer(player);
         threadA.start();
 
         synchronized (player) {
+//          player.lock();
             player.wait();
+//          player.unlock();
         }
 
-        System.out.println(threadA.total);
-    }
+//        threadA.join();
 
-    static class ThreadA extends Thread {
-        int total;
-
-        Player player;
-
-        @Override
-        public void run() {
-            synchronized (this) {
-                for (int i = 0; i < 5; i++) {
-                    total += i;
-                    try {
-                        sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                this.notify();
-            }
-        }
+        System.out.println(threadA.getTotal());
     }
 }
