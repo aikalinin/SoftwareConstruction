@@ -5,11 +5,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
 
-public class ThreadReader extends Thread {
+public class ThreadReader extends Thread implements AutoCloseable {
 
     private final InputStream inputStream;
 
     private final String clientName;
+
+    private volatile boolean isRunning = true;
 
     public ThreadReader(InputStream inputStream, String clientName) {
         this.inputStream = inputStream;
@@ -27,9 +29,15 @@ public class ThreadReader extends Thread {
                         "[{0}] Received Data: {1}",
                         clientName,
                         receivedData));
-            } while (!receivedData.equals("exit"));
-        } catch (Exception e) {
+            } while (!receivedData.equals("exit") && isRunning);
+        }
+        catch (Exception e) {
             System.out.println(Thread.currentThread().getName() + " exception");
         }
+    }
+
+    @Override
+    public void close() throws Exception {
+        isRunning = false;
     }
 }

@@ -3,6 +3,7 @@ package org.edu.hse.seminar12.socket.reader;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Scanner;
 
 public class MainServer {
@@ -11,13 +12,13 @@ public class MainServer {
 
     public static void main(String[] args) {
         try (final var server = new ServerSocket(SERVER_PORT);
-             final var scanner = new Scanner(System.in)) {
-            final Socket clientConnection = server.accept();
-
-            final var threadReader = new ThreadReader(
-                    clientConnection.getInputStream(),
-                    "Server"
-            );
+             final var scanner = new Scanner(System.in);
+             final Socket clientConnection = server.accept();
+             final var threadReader = new ThreadReader(
+                     clientConnection.getInputStream(),
+                     "Server"
+             );
+        ) {
             threadReader.start();
 
             System.out.println("Client was connected");
@@ -29,8 +30,13 @@ public class MainServer {
                 serverData = scanner.nextLine();
                 serverOutput.writeBytes(serverData + "\n");
             } while (!serverData.equals("exit"));
+        } catch (SocketException e) {
+            System.out.println("Client disconnected");
+            System.out.println(e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }
