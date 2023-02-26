@@ -1,0 +1,5 @@
+rootProject.name = 'software-construction'
+
+include 'seminar2'
+include 'seminar9'
+

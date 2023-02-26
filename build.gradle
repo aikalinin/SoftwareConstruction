@@ -1,0 +1,21 @@
+plugins {
+    id 'io.freefair.lombok' version '5.1.0' apply false
+    id 'java'
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenLocal()
+        maven {
+            url = uri('https://repo.maven.apache.org/maven2/')
+        }
+    }
+}

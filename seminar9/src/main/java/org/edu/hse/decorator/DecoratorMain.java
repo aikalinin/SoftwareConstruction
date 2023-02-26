@@ -1,4 +1,4 @@
-package org.edu.hse.seminar9.decorator;
+package org.edu.hse.decorator;
 
 import java.util.HashMap;
 import java.util.Map;

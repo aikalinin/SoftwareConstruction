@@ -1,4 +1,4 @@
-package org.edu.hse.seminar2.oop;
+package org.edu.hse.oop;
 
 import java.util.List;
 
