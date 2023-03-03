@@ -8,7 +8,7 @@
 ```java
 public class Test {
     
-    private List data = Arrays.asList(
+    private static List data = Arrays.asList(
             "aa", "bbb", "c", "d", "aa", "bbb", "c", "d", "aa", "bbb", "c", "d", "aa", "bbb", "c", "d",
             "aa", "bbb", "c", "d", "aa", "bbb", "c", "d", "aa", "bbb", "c", "d", "aa", "bbb", "c", "d",
             "aa", "bbb", "c", "d", "aa", "bbb", "c", "d", "aa", "bbb", "c", "d", "aa", "bbb", "c", "d",
@@ -18,7 +18,7 @@ public class Test {
         doParallelWork(data);
     }
 
-    public static List doParallelWork(List data) {
+    public static int doParallelWork(List data) {
         // Implement ..
 
     }
@@ -55,6 +55,15 @@ public class Test {
 
 *Представитель* подключился
 - **Представитель:** Здравствуйте, я представляю компанию Орифлейм.
+
+## Задание на семинар 13
+**Авторизационный сервис** Программа должна состоять из трёх rest-http сервисов:
+- регистрации
+- авторизация
+- тестовый сервис, к которому могут получить доступ только авторизационные пользователи
+
+Выбор способа авторизации и аутентификации остаётся на вас 
+
 
 ## Форма для сдачи дз
 **https://forms.gle/yrtSgDFnRUAZDEox5**
